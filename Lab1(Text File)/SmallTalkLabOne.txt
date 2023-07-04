@@ -1,0 +1,67 @@
+Q1:
+
+| x sum count|
+Transcript clear.
+x:= #(11 12 13 14).
+sum := 0.
+count :=0.
+
+x do: [:each | each even ifTrue: [sum := sum + each. count := count +1.].]. 
+
+sum := sum/count.
+
+Transcript show: 'the average of all the even integers is: '.
+
+Transcript show: sum.
+
+
+
+
+Q2:
+
+| x y uniq |
+Transcript clear.
+ordcol := OrderedCollection new.
+
+x := 1.
+y := 21.
+
+[ x < y ] whileTrue: [ 
+	
+ordcol add: (1 to: 15) atRandom.
+x:= x+1.	
+	
+	 ].
+
+ordcol do: [ :elm |Transcript show: elm; cr ].
+
+ordcol removeDuplicates.
+
+uniq := ordcol size.
+
+Transcript show: 'The Number of uniq elements: '.
+
+Transcript show: uniq
+
+
+
+
+
+Q3:
+
+| x sum count Largest|
+Transcript clear.
+x:= #(11 12 13 14).
+sum := 0.
+count :=0.
+Largest := 0.
+
+ordcol := OrderedCollection new.
+
+x do: [:each | each odd ifTrue: [sum := sum + each. ordcol add: each. ].]. 
+
+ordcol do: [ :elm | (elm > Largest) ifTrue: [Largest := elm.] ].
+
+Transcript show: 'The largest odd num is: '.
+
+Transcript show: Largest.
